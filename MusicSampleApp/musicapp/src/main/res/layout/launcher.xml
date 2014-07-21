@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+     android:id="@+id/main_screen"
+    android:background="@drawable/rdio_gradient"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/launch_native_music"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:onClick="launchNativeSearch"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:text="Play Native Music" />
+
+    <Button
+        android:id="@+id/launch_rdio"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/launch_native_music"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:onClick="launchRdaioSearch"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="Rdio Music" />
+    
+     <Button
+        android:id="@+id/slideButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Slide up / down"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true" 
+        android:onClick="slideUpDown"/>
+    
+
+</RelativeLayout>

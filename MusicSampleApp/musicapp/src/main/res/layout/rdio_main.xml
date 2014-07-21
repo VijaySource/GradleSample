@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/rdio_gradient"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/top1_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/top_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1" >
+
+                <EditText
+                    android:id="@+id/gesture_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="5dp"
+                    android:layout_weight="0.75"
+                    android:hint="Gesture text"
+                    android:textColor="#000000"
+                    android:textSize="22sp" />
+
+                <Button
+                    android:id="@+id/clearButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="0.25"
+                    android:text="Clear" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/search_gesture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:text="Artist"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <android.gesture.GestureOverlayView
+            android:id="@+id/gestures"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:layout_above="@+id/bottom_layout"
+            android:layout_below="@+id/top1_layout" >
+
+            <TextView
+                android:id="@+id/Info_text"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Draw characters one at a time"
+                android:textColor="#ffffff"
+                android:textSize="22sp"
+                android:visibility="visible" />
+        </android.gesture.GestureOverlayView>
+
+        <!--
+        <LinearLayout
+            android:id="@+id/searchListlayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_layout"
+            android:layout_below="@+id/gestures"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:weightSum="3" >
+
+            <com.devsmart.android.ui.HorizontalListView
+                android:id="@+id/playlist_hs_view"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/rdio_gradient"
+                android:visibility="gone" />
+
+            <com.devsmart.android.ui.HorizontalListView
+                android:id="@+id/searchList1"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/rdio_gradient"
+                android:visibility="gone" />
+
+            <com.devsmart.android.ui.HorizontalListView
+                android:id="@+id/searchList2"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/rdio_gradient"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        -->
+
+        <LinearLayout
+            android:id="@+id/searchListlayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/bottom_layout"
+            android:layout_below="@+id/gestures"
+            android:orientation="vertical"
+            android:weightSum="3"
+            android:visibility="visible" >
+
+            <LinearLayout
+                android:id="@+id/listlayout1"
+                android:layout_width="fill_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                android:background="@drawable/rdio_gradient"
+                android:visibility="visible"
+                android:weightSum="2" >
+
+                <TextView
+                    android:id="@+id/playlist_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.05"
+                    android:text="Playlist"
+                    android:textColor="#ffffff"
+                    android:textSize="19sp" />
+
+                <com.devsmart.android.ui.HorizontalListView
+                    android:id="@+id/playlist_hs_view"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.95"
+                    android:visibility="gone" />
+            </LinearLayout>
+            
+            <View android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#000000"/>
+
+            <LinearLayout
+                android:id="@+id/listlayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/rdio_gradient"
+                android:visibility="visible"
+                android:weightSum="2" >
+
+                <TextView
+                    android:id="@+id/artist_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.05"
+                    android:text="Artist"
+                    android:textColor="#ffffff"
+                    android:textSize="19sp" />
+
+                <com.devsmart.android.ui.HorizontalListView
+                    android:id="@+id/searchList1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.95"
+                    android:visibility="gone" />
+            </LinearLayout>
+            
+            <View android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#000000"/>
+
+            <LinearLayout
+                android:id="@+id/listlayout3"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/rdio_gradient"
+                android:visibility="visible"
+                android:weightSum="2" >
+
+                <TextView
+                    android:id="@+id/album_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.05"
+                    android:text="Album"
+                    android:textColor="#ffffff"
+                    android:textSize="19sp" />
+
+                <com.devsmart.android.ui.HorizontalListView
+                    android:id="@+id/searchList2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.95"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <View
+                android:id="@+id/line_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:background="#000000"
+                android:orientation="horizontal" >
+            </View>
+
+            <TextView
+                android:id="@+id/gesture_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:hint="Gesture text"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:text="Search" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
